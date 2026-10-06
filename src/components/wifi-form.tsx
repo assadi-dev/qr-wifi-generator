@@ -86,7 +86,7 @@ export function WifiForm({
   return (
     <Card
       className={cn(
-        "rounded-3xl shadow-sm [--card-spacing:--spacing(6)] sm:[--card-spacing:--spacing(8)]",
+        "rounded-3xl shadow-sm [--card-spacing:--spacing(4)] sm:[--card-spacing:--spacing(8)]",
         className
       )}
     >
@@ -108,7 +108,7 @@ export function WifiForm({
         </CardHeader>
 
         <CardContent className="flex-1">
-          <FieldGroup className="gap-6">
+          <FieldGroup className="gap-4 sm:gap-6">
             <Controller
               name="ssid"
               control={control}
@@ -129,7 +129,7 @@ export function WifiForm({
                     aria-describedby={
                       fieldState.invalid ? `${field.name}-error` : undefined
                     }
-                    className="h-12 px-4"
+                    className="h-11 px-4 sm:h-12"
                   />
                   {fieldState.invalid && (
                     <FieldError
@@ -159,7 +159,7 @@ export function WifiForm({
                     <SelectTrigger
                       id={field.name}
                       onBlur={field.onBlur}
-                      className="h-12 w-full px-4"
+                      className="h-11 w-full px-4 sm:h-12"
                     >
                       <SelectValue />
                     </SelectTrigger>
@@ -182,7 +182,7 @@ export function WifiForm({
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
                     <FieldLabel htmlFor={field.name}>Mot de passe</FieldLabel>
-                    <InputGroup className="h-12">
+                    <InputGroup className="h-11 sm:h-12">
                       <InputGroupInput
                         {...field}
                         id={field.name}
@@ -257,7 +257,11 @@ export function WifiForm({
         </CardContent>
 
         <CardFooter className="lg:hidden">
-          <Button type="submit" size="lg" className="h-12 w-full text-base">
+          <Button
+            type="submit"
+            size="lg"
+            className="h-11 w-full text-base sm:h-12"
+          >
             Voir l’aperçu
             <HugeiconsIcon
               icon={ArrowRight01Icon}

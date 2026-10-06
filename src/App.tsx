@@ -73,15 +73,15 @@ export function App() {
   }
 
   return (
-    <main className="relative flex min-h-svh flex-col items-center justify-center px-4 py-6 sm:px-8 sm:py-16 lg:py-8">
+    <main className="relative flex min-h-svh flex-col items-center justify-center px-4 py-4 sm:px-8 sm:py-16 lg:py-8">
       <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
         <ThemeToggle />
       </div>
 
-      <div className="flex w-full max-w-4xl flex-col gap-6 sm:gap-8">
-        <header className="flex flex-col items-center gap-3 text-center sm:gap-4">
-          <span className="grid size-12 place-items-center rounded-2xl bg-primary text-primary-foreground sm:size-14">
-            <HugeiconsIcon icon={Wifi01Icon} className="size-7" />
+      <div className="flex w-full max-w-4xl flex-col gap-4 sm:gap-8">
+        <header className="flex flex-col items-center gap-2 text-center sm:gap-4">
+          <span className="grid size-10 place-items-center rounded-2xl bg-primary text-primary-foreground sm:size-14">
+            <HugeiconsIcon icon={Wifi01Icon} className="size-6 sm:size-7" />
           </span>
           <h1 className="text-2xl font-semibold tracking-tight text-balance sm:text-4xl">
             QR Code Wi-Fi

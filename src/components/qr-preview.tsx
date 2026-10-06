@@ -67,7 +67,7 @@ export function QrPreview({
   return (
     <Card
       className={cn(
-        "rounded-3xl shadow-sm [--card-spacing:--spacing(6)] sm:[--card-spacing:--spacing(8)]",
+        "rounded-3xl shadow-sm [--card-spacing:--spacing(4)] sm:[--card-spacing:--spacing(8)]",
         className
       )}
     >
@@ -82,7 +82,7 @@ export function QrPreview({
         </CardDescription>
       </CardHeader>
 
-      <CardContent className="flex flex-1 flex-col items-center justify-center gap-6">
+      <CardContent className="flex flex-1 flex-col items-center justify-center gap-4 sm:gap-6">
         <div className="aspect-square w-full max-w-72">
           {svg ? (
             <svg
@@ -119,10 +119,10 @@ export function QrPreview({
         </div>
       </CardContent>
 
-      <CardFooter className="flex-col gap-3">
+      <CardFooter className="flex-col gap-2 sm:gap-3">
         <Button
           size="lg"
-          className="h-12 w-full text-base"
+          className="h-11 w-full text-base sm:h-12"
           disabled={!matrix}
           onClick={handleDownload}
         >
@@ -136,7 +136,7 @@ export function QrPreview({
         <Button
           variant="ghost"
           size="lg"
-          className="h-12 w-full text-base lg:hidden"
+          className="h-11 w-full text-base sm:h-12 lg:hidden"
           onClick={onEdit}
         >
           <HugeiconsIcon

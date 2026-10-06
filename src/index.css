@@ -91,12 +91,31 @@
   html {
     @apply font-sans;
     }
-  /* Desktop: both panels sit side by side, so scale the whole UI (everything
-     is rem-based) with the window height until it fits without scrolling.
-     16px is kept whenever the window is tall enough. */
+  /* Scale the whole UI (everything is rem-based) with the window height until
+     each screen fits without scrolling; 16px is kept whenever it is tall
+     enough. The divisor is the tallest screen's height in rem, with some
+     slack for validation errors. */
+  @media (max-width: 639px) {
+    html {
+      font-size: clamp(12px, calc(100svh / 47), 16px);
+      }
+    }
+  @media (min-width: 640px) and (max-width: 1023px) {
+    html {
+      font-size: clamp(12px, calc(100svh / 66), 16px);
+      }
+    }
   @media (min-width: 1024px) {
     html {
       font-size: clamp(11px, calc(100svh / 56), 16px);
       }
     }
+}
+
+/* Unlayered on purpose, so it beats the `text-base` utility: iOS Safari zooms
+   into any input below 16px on focus, which the root scaling would cause. */
+@media (max-width: 767px) {
+  input {
+    font-size: 16px;
+  }
 }
