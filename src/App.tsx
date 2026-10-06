@@ -73,7 +73,7 @@ export function App() {
   }
 
   return (
-    <main className="relative flex min-h-svh flex-col items-center justify-center px-4 py-6 sm:px-8 sm:py-16">
+    <main className="relative flex min-h-svh flex-col items-center justify-center px-4 py-6 sm:px-8 sm:py-16 lg:py-8">
       <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
         <ThemeToggle />
       </div>

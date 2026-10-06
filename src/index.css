@@ -91,4 +91,12 @@
   html {
     @apply font-sans;
     }
+  /* Desktop: both panels sit side by side, so scale the whole UI (everything
+     is rem-based) with the window height until it fits without scrolling.
+     16px is kept whenever the window is tall enough. */
+  @media (min-width: 1024px) {
+    html {
+      font-size: clamp(11px, calc(100svh / 56), 16px);
+      }
+    }
 }

@@ -6,7 +6,17 @@
       "Bash(npx ctx7@latest docs /vercel/vercel \"vercel.json headers Cache-Control for immutable assets and security headers, Vite framework preset\")",
       "Bash(npx ctx7@latest docs /websites/vercel \"supported Node.js versions and how to set the Node.js version via package.json engines\")",
       "Bash(node -e 'JSON.parse\\(require\\(\"fs\"\\).readFileSync\\(\"vercel.json\"\\)\\);JSON.parse\\(require\\(\"fs\"\\).readFileSync\\(\"package.json\"\\)\\);console.log\\(\"JSON ok\"\\)')",
-      "Bash(npm ci *)"
+      "Bash(npm ci *)",
+      "mcp__claude-in-chrome__tabs_context_mcp",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5174/)",
+      "Bash(node measure.mjs http://localhost:5174/ before 1440x900 1366x768 1280x720 1920x1080)",
+      "Bash(PREP='\\(\\(\\) => { const i = document.getElementById\\(\"ssid\"\\); i.dispatchEvent\\(new FocusEvent\\(\"focusin\",{bubbles:true}\\)\\); i.dispatchEvent\\(new FocusEvent\\(\"focusout\",{bubbles:true}\\)\\); const p = document.getElementById\\(\"password\"\\); p.dispatchEvent\\(new FocusEvent\\(\"focusin\",{bubbles:true}\\)\\); p.dispatchEvent\\(new FocusEvent\\(\"focusout\",{bubbles:true}\\)\\); }\\)\\(\\)' node measure.mjs http://localhost:5174/ errors 1366x650 1280x600)",
+      "Bash(SCHEME=light node measure.mjs http://localhost:5174/ light 1366x650)",
+      "Bash(sed -i 's|100svh / 54|100svh / 56|' src/index.css)",
+      "Bash(PREP='\\(\\(\\) => { for \\(const id of [\"ssid\",\"password\"]\\) { const i = document.getElementById\\(id\\); i.dispatchEvent\\(new FocusEvent\\(\"focusin\",{bubbles:true}\\)\\); i.dispatchEvent\\(new FocusEvent\\(\"focusout\",{bubbles:true}\\)\\); } }\\)\\(\\)' node measure.mjs http://localhost:5174/ errors 1366x650 1280x600 1440x800)",
+      "Bash(node measure.mjs http://localhost:5174/ final 1440x800 1366x650 1440x900 1920x1080)",
+      "Bash(npx prettier *)",
+      "Bash(node -e ' *)"
     ]
   }
 }

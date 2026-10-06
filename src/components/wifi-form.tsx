@@ -50,6 +50,15 @@ type WifiFormProps = {
   className?: string
 }
 
+// Opt out of the password managers' own autofill (1Password, LastPass,
+// Bitwarden, Dashlane); `autoComplete` below covers the browser itself.
+const NO_AUTOFILL = {
+  "data-1p-ignore": true,
+  "data-lpignore": "true",
+  "data-bwignore": true,
+  "data-form-type": "other",
+} as const
+
 const PASSWORD_HINTS: Record<Security, string> = {
   WPA: "De 8 à 63 caractères.",
   WEP: "5, 10, 13 ou 26 caractères.",
@@ -81,7 +90,12 @@ export function WifiForm({
         className
       )}
     >
-      <form noValidate onSubmit={onSubmit} className="contents">
+      <form
+        noValidate
+        autoComplete="off"
+        onSubmit={onSubmit}
+        className="contents"
+      >
         <CardHeader>
           <CardTitle className="text-xl font-semibold">
             <h2 ref={headingRef} tabIndex={-1} className="outline-none">
@@ -110,6 +124,7 @@ export function WifiForm({
                     autoComplete="off"
                     autoCapitalize="none"
                     spellCheck={false}
+                    {...NO_AUTOFILL}
                     aria-invalid={fieldState.invalid}
                     aria-describedby={
                       fieldState.invalid ? `${field.name}-error` : undefined
@@ -135,6 +150,7 @@ export function WifiForm({
                   <Select
                     name={field.name}
                     value={field.value}
+                    autoComplete="off"
                     onValueChange={(value) => {
                       field.onChange(value)
                       revalidatePassword()
@@ -171,11 +187,10 @@ export function WifiForm({
                         {...field}
                         id={field.name}
                         type={showPassword ? "text" : "password"}
-                        autoComplete="off"
+                        autoComplete="new-password"
                         autoCapitalize="none"
                         spellCheck={false}
-                        data-1p-ignore
-                        data-lpignore="true"
+                        {...NO_AUTOFILL}
                         aria-invalid={fieldState.invalid}
                         aria-describedby={`${field.name}-${fieldState.invalid ? "error" : "hint"}`}
                         className="h-full px-4"
@@ -223,7 +238,8 @@ export function WifiForm({
                     <FieldContent>
                       <FieldTitle>Réseau masqué</FieldTitle>
                       <FieldDescription>
-                        Le réseau n’apparaît pas dans la liste des Wi-Fi.
+                        Le réseau n’apparaît pas dans la liste des{" "}
+                        <span className="whitespace-nowrap">Wi-Fi</span>.
                       </FieldDescription>
                     </FieldContent>
                     <Switch
