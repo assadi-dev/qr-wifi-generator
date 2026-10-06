@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx ctx7@latest library Vercel \"vercel.json configuration for Vite project: headers, cache-control, framework, buildCommand, outputDirectory\")",
+      "Bash(export npm_config_cache=/private/tmp/claude-501/-Users-assadi-Projects-React-qr-wifi-generator/85c31561-ec68-4eb0-8701-cbacea966431/scratchpad/npm-cache)",
+      "Bash(npx ctx7@latest docs /vercel/vercel \"vercel.json headers Cache-Control for immutable assets and security headers, Vite framework preset\")",
+      "Bash(npx ctx7@latest docs /websites/vercel \"supported Node.js versions and how to set the Node.js version via package.json engines\")",
+      "Bash(node -e 'JSON.parse\\(require\\(\"fs\"\\).readFileSync\\(\"vercel.json\"\\)\\);JSON.parse\\(require\\(\"fs\"\\).readFileSync\\(\"package.json\"\\)\\);console.log\\(\"JSON ok\"\\)')",
+      "Bash(npm ci *)"
+    ]
+  }
+}
